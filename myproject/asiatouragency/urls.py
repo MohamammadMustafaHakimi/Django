@@ -5,6 +5,12 @@ from . import views
 
 # Define a list of url patterns
 
+# urlpatterns = [
+#     path('', views.index) # we imported this on the top of this page; it takes two arguments, namely route, and view
+# ]
+
 urlpatterns = [
-    path('', views.index) # we imported this on the top of this page; it takes two arguments, namely route, and view
+    path('', views.home_view, name='home'),
+    path('contact/', views.contact_view, name='contact'),
+    path('contact/success', views.home_view, name='contact-success')
 ]
