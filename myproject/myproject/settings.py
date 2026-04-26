@@ -17,6 +17,7 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 #
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -126,6 +127,12 @@ USE_TZ = True
 
 # this is important for your static assets from images, also if you want to render css and embed javascript in your code
 STATIC_URL = "static/"
+
+MEDIA_URL = 'images/' # user uploaded images/media
+
+STATICFILES_DIRS = ( # contains all of the paths to the directories within the project
+    os.path.join(BASE_DIR, 'static'),
+)
 
 
 # all and all the settings.py is extremely customizable, enabling you to change different aspects of your project, by modifying the settings
