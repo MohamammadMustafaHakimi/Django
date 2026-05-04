@@ -131,7 +131,7 @@ STATIC_URL = "static/"
 MEDIA_URL = 'images/' # user uploaded images/media
 
 STATICFILES_DIRS = ( # contains all of the paths to the directories within the project
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'static'), # DO NOT FORGET THE COMMA!!!
 )
 
 

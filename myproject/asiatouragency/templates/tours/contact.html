@@ -1,0 +1,20 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="{% static 'asiatouragency/styles/styles.css'%}">
+</head>
+<body>
+  <h1 class="contact-heading">Contact Us</h1>
+  <form action="" method="POST"> <!-- for preventing from Cross Site Forgery Attacks we use the csrf_token -->
+    {% csrf_token %}
+    {{form.as_p}} <!-- we are rendering the form fields that we created in the forms.py in the ContactForm class -->
+    <button type="submit">Submit</button> <!-- button that is used for sending the form data -->
+
+  </form>
+</body>
+</html>

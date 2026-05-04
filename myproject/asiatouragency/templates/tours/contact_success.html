@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="{% static 'asiatouragency/styles/styles.css' %}">
+</head>
+<body>
+  <div class="success-message">
+    <h1 class="contact-success-heading">Success!</h1>
+    <p>Your contact messge has been successfully sent. we'll be in touch soon. </p>
+    <a href="{% url 'home' %}">back to Home Page</a>
+  </div>
+</body>
+</html>
