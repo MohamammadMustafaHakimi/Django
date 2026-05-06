@@ -16,14 +16,15 @@ def register_view(request):
             user = User.objects.create_user(username=username, password=password) # create and hash the user's password in the database where the key is the username
             login(request, user) # auto log in
             return redirect('home') # redirect the user to the homepage after loging-in
-        else:
-            form = RegisterForm()
-            return render(request, 'accounts/register.html', {'form':form})
+    else:
+        form = RegisterForm()
+    return render(request, 'accounts/register.html', {'form':form})
 
 
     # checking if the request POST or not
 
 def login_view(request):
+    error_message = None
     if request.method == 'POST': # only processes authentication if form data is sent
         username = request.POST.get("username") # get's the username from the form
         password = request.POST.get("password") # get's the password from the form
@@ -48,7 +49,7 @@ def logout_view(request): # easiest function to write in authentication
 
 @login_required # decorator which wraps home_view, and checks if the user is logged n weeeeeeeeee
 def home_view(request): # only if the user is logged in then we want to keep them in the home view
-    return render(request, 'home/home.html')
+    return render(request, 'auth1_app/home.html')
 
 # Protected View: a view only for logged in users
 class ProtectedView(LoginRequiredMixin, View):
